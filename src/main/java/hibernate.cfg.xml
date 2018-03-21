@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- SQL Dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Database Connection Settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>						<!-- Schema for inheretance -->
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Mapping?useSSL=false</property>  <!-- Inheritance -->
+		<property name="hibernate.connection.username">root</property>											
+		<property name="hibernate.connection.password">0007</property>
+		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<!-- To show SQL queries fired in db -->
+		<property name="show_sql">true</property>
+
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<!-- <mapping class="com.hibernate.sample.User"/> -->
+		<mapping class="com.hibernate.onetomany.Employee"/>
+		<mapping class="com.hibernate.onetomany.Project"/>
+		</session-factory>
+</hibernate-configuration>
